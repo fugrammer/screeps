@@ -19,4 +19,10 @@ module.exports = {
     getTotalCreepCount: function(){
       return _(Game.creeps).filter( {} ).size();
     },
+
+    getBodyCost: function(body) {
+      return body.reduce(function (cost, part) {
+          return cost + BODYPART_COST[part];
+      }, 0);
+    },
   };
